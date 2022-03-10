@@ -5,7 +5,7 @@ import "./HeaderOption.css";
 function HeaderOption({ avatar, Icon, title }) {
   return (
     <div className="headerOption">
-      {Ico`kn && <Icon className="headerOption_icon" />}
+      {Icon && <Icon className="headerOption_icon" />}
       {avatar && <Avatar className="headerOption_icon" src={avatar} />}
       <h3 className="headerOption__title">{title}</h3>
     </div>
