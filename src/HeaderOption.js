@@ -1,10 +1,15 @@
-import React from 'react'
-import "./HeaderOption.css"
+import { Avatar } from "@mui/material";
+import React from "react";
+import "./HeaderOption.css";
 
-function HeaderOption() {
+function HeaderOption({ avatar, Icon, title }) {
   return (
-    <div>HeaderOption</div>
-  )
+    <div className="headerOption">
+      {Ico`kn && <Icon className="headerOption_icon" />}
+      {avatar && <Avatar className="headerOption_icon" src={avatar} />}
+      <h3 className="headerOption__title">{title}</h3>
+    </div>
+  );
 }
 
-export default HeaderOption
+export default HeaderOption;
