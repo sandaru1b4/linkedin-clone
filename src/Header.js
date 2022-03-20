@@ -24,7 +24,10 @@ function Header() {
         <HeaderOption Icon={BusinessCenterIcon} title="Jobs" />
         <HeaderOption Icon={MessageIcon} title="Messaging" />
         <HeaderOption Icon={NotificationsIcon} title="Notifications" />
-        <HeaderOption avatar="https://upload.wikimedia.org/wikipedia/commons/3/35/Boki-avatar-v2.jpg" />
+        <HeaderOption
+          avatar="https://upload.wikimedia.org/wikipedia/commons/3/35/Boki-avatar-v2.jpg"
+          title="Me"
+        />
       </div>
     </div>
   );
