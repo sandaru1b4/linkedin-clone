@@ -4,44 +4,43 @@ import CreateIcon from "@mui/icons-material/Create";
 import InputOption from "./InputOption";
 import ImageIcon from "@mui/icons-material/Image";
 import Post from "./Post";
-// import { db } from "./Firebase";
-// import firebase from "firebase/compat/app";
-// import "firebase/compat/firestore";
+import { db } from "./Firebase.js";
+import firebase from "firebase/compat/app";
 
 function Feed() {
+  
   //constants
-
   const [input, setInput] = useState("");
   const [posts, setPosts] = useState([]);
 
-  // useEffect(() => {
-  //   db.collection("posts")
-  //     .orderBy("timestamp", "desc")
-  //     .onSnapshot((snapshot) =>
-  //       setPosts(
-  //         snapshot.docs.map((doc) => ({
-  //           id: doc.id,
-  //           data: doc.data(),
-  //         }))
-  //       )
-  //     );
-  // }, []);
+  useEffect(() => {
+    db.collection("posts")
+      .orderBy("timestamp", "desc")
+      .onSnapshot((snapshot) =>
+        setPosts(
+          snapshot.docs.map((doc) => ({
+            id: doc.id,
+            data: doc.data(),
+          }))
+        )
+      );
+  }, []);
 
   //send post when buttton click
 
-  // const sendPost = (e) => {
-  //   e.preventDefault();
+  const sendPost = (e) => {
+    e.preventDefault();
 
-  //   db.collection("posts").add({
-  //     name: "Achitha Sandaruwan",
-  //     description: "Test text",
-  //     message: input,
-  //     photoUrl: "",
-  //     timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-  //   });
+    db.collection("posts").add({
+      name: "Achitha Sandaruwan",
+      description: "Test text",
+      message: input,
+      photoUrl: "",
+      timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+    });
 
-  //   setInput("");
-  // };
+    setInput("");
+  };
 
   return (
     <div className="feed">
@@ -54,7 +53,7 @@ function Feed() {
               onChange={(e) => setInput(e.target.value)}
               type="text"
             />
-            <button type="submit">send</button>
+            <button onClick={sendPost} type="submit">send</button>
           </form>
         </div>
         <div className="feed__inputOptions">
