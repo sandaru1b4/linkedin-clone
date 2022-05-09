@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
 import "./Feed.css";
 import CreateIcon from "@mui/icons-material/Create";
-import InputOption from "./InputOption";
+import InputOption from "../InputOption/InputOption";
 import ImageIcon from "@mui/icons-material/Image";
-import Post from "./Post";
-import { db } from "./Firebase.js";
+import Post from "../Post/Post";
+import { db } from "../../Firebase.js";
 import firebase from "firebase/compat/app";
 
 function Feed() {
-  
+
   //constants
   const [input, setInput] = useState("");
   const [posts, setPosts] = useState([]);
@@ -27,7 +27,6 @@ function Feed() {
   }, []);
 
   //send post when buttton click
-
   const sendPost = (e) => {
     e.preventDefault();
 
