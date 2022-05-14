@@ -3,6 +3,7 @@ import "./Feed.css";
 import CreateIcon from "@mui/icons-material/Create";
 import InputOption from "../InputOption/InputOption";
 import ImageIcon from "@mui/icons-material/Image";
+import { Avatar } from "@mui/material";
 import Post from "../Post/Post";
 import { db } from "../../Firebase.js";
 import firebase from "firebase/compat/app";
@@ -44,6 +45,10 @@ function Feed() {
   return (
     <div className="feed">
       <div className="feed__InputContainer">
+      <div className="feed__InputContainerWithDp">
+      
+      <Avatar className="feedInput__dp" src= "https://upload.wikimedia.org/wikipedia/commons/3/35/Boki-avatar-v2.jpg" />
+
         <div className="feed__input">
           <CreateIcon />
           <form>
@@ -54,6 +59,7 @@ function Feed() {
             />
             <button onClick={sendPost} type="submit">send</button>
           </form>
+        </div>
         </div>
         <div className="feed__inputOptions">
           {/* Input Option */}

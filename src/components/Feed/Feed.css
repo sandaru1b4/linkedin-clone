@@ -11,6 +11,10 @@
   margin-bottom: 20px;
 }
 
+.feed__InputContainerWithDp {
+  display: flex;
+}
+
 .feed__input {
   border: 1px solid lightgray;
   border-radius: 30px;
@@ -18,6 +22,7 @@
   padding: 10px;
   color: gray;
   padding-left: 15px;
+  width: 100%;
 }
 
 .feed__input > form {

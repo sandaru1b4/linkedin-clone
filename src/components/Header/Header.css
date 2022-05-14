@@ -17,8 +17,7 @@
 
 .header__left > img {
   object-fit: contain;
-  height: 40px;
-  margin-right: 10;
+  height: 36px;
 }
 
 .header_search {
@@ -26,7 +25,7 @@
   display: flex;
   align-items: center;
   border-radius: 5px;
-  height: 15px;
+  height: 16px;
   color: #5f6163;
   background-color: #eef3f8;
 }
