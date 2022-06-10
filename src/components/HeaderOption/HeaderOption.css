@@ -7,6 +7,11 @@
   cursor: pointer;
 }
 
+.headerOption .headerOption_icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
 .headerOption > :hover {
   color: black;
 }

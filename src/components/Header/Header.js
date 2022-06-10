@@ -7,8 +7,18 @@ import SupervisorAccountIcon from "@mui/icons-material/SupervisorAccount";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import MessageIcon from "@mui/icons-material/Message";
 import BusinessCenterIcon from "@mui/icons-material/BusinessCenter";
+import { useDispatch } from "react-redux";
+import { auth } from "../../Firebase";
+import { logout } from "../../features/userSlice";
 
 function Header() {
+  const dispatch = useDispatch();
+
+  const logoutApp = () => {
+    dispatch(logout());
+    auth.signOut();
+  };
+
   return (
     <div className="header">
       <div className="header__left">
@@ -24,10 +34,7 @@ function Header() {
         <HeaderOption Icon={BusinessCenterIcon} title="Jobs" />
         <HeaderOption Icon={MessageIcon} title="Messaging" />
         <HeaderOption Icon={NotificationsIcon} title="Notifications" />
-        <HeaderOption
-          avatar="https://upload.wikimedia.org/wikipedia/commons/3/35/Boki-avatar-v2.jpg"
-          title="Me"
-        />
+        <HeaderOption avatar={true} title="Me" onClick={logoutApp} />
       </div>
     </div>
   );
